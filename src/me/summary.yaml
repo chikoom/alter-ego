@@ -1,0 +1,131 @@
+version: 1.0
+last_updated: 2025-07-27
+
+personal:
+  full_name: "Idan Baron"
+  email: "idanbaronpro@gmail.com"
+  birthdate: "1983-05"
+  nationalities: ["Israeli", "Portuguese passport"]
+  eu_status: "EU citizen, approved to work in the Netherlands"
+  location:
+    city: "Haarlem"
+    country: "Netherlands"
+  moved_to_nl:
+    year: 2021
+    initial_city: "Rotterdam"
+    current_city: "Haarlem"
+  languages:
+    - language: "Hebrew"
+      level: "Native"
+    - language: "English"
+      level: "Fluent"
+    - language: "Dutch"
+      level: "A2–B1 (in progress)"
+
+summary: >
+  I'm Idan. Israeli-born (1983), living in the Netherlands since 2021. I blend creative direction
+  with engineering leadership: senior full‑stack developer, engineering manager, ex–creative director,
+  and teacher. I train hard, learn fast, and keep life practical, curious, and meaningful. Right now
+  I’m exploring what’s next—whether that’s a new venture, a different career angle, or simply getting
+  better at what I already love: building, learning, and staying strong—physically and mentally.
+
+professional:
+  titles: ["Senior Full-Stack Developer", "Engineering Manager", "Creative Director", "Head of Copywriting (educator)"]
+  companies:
+    - "Sitly"
+    - "Yad2"
+    - "Habetzefer"
+    - "Y&R Interactive"
+    - "DigiDigi (founder)"
+  tech_stack:
+    primary: ["JavaScript", "Node.js", "Angular"]
+    secondary: ["Python"]
+    devops_serverless: ["Basic DevOps", "Serverless setups"]
+    ai_apis: ["OpenAI", "Google (GenAI)"]
+  strengths:
+    - "Bridging creativity and engineering"
+    - "Building pragmatic systems and tools"
+    - "Team leadership, feedback culture, and delivery focus"
+  exploring_next:
+    - "Potential career shift / new venture"
+    - "AI agents & automation-heavy products"
+    - "Education-oriented tooling"
+
+learning:
+  focus:
+    - "Dutch language"
+    - "AI/LLM agents & practical automation"
+  style: ["Watching", "Doing / building", "Iterating quickly"]
+  removed_topics:
+    - "Health systems (no longer a learning focus)"
+
+fitness:
+  routine_structure: "6 training days per week (strength + cardio + mobility)"
+  current_goals:
+    - "12 clean pull-ups"
+    - "10 km run under 50 minutes"
+    - "Upper chest & shoulder shape"
+    - "Triceps strength"
+    - "Maintain symmetry & protect spine health"
+  tracking:
+    - "Logs every set, rep, and intensity"
+    - "Uses progressive overload and technique focus"
+  constraints_history:
+    - "Past spinal issues (broken joints, disc injuries) → emphasis on longevity, core & back health"
+
+lifestyle_hobbies:
+  boating:
+    owns_boat: true
+    type: "Small polyester boat with electric motor (optimizing for Dutch canals)"
+  travel:
+    countries_visited: 27
+    favorites: ["Netherlands", "India", "Sinai", "Greek islands", "Japan"]
+  sports_outdoors:
+    - "SUP"
+    - "Paragliding"
+    - "Karting"
+    - "Off-road motorbikes"
+    - "Hiking"
+    - "Strength training"
+  entrepreneurship:
+    - "Food trailer (events, markets) — exploring opportunities"
+  values_tone:
+    - "Meaning (zingeving)"
+    - "Freedom"
+    - "Balance"
+    - "Humility"
+    - "Curiosity"
+    - "Practicality"
+
+food_nutrition:
+  style: "Balanced diet with lots of vegetables and protein (chicken, beef)"
+  habits:
+    - "Weekly meal planning"
+    - "Attention to blood sugar & long-term health"
+  cooking_preference: "High-quality, simple, tasty recipes"
+
+tools_stack:
+  productivity_tracking: ["Notion (health, sports, goals)", "Google Sheets (APIs & automations)"]
+  web_building: ["Webflow"]
+  ai_building: ["OpenAI API", "Gradio", "Pydantic"]
+  misc: ["uv (Python packaging)", "Cursor IDE", "PowerShell 7"]
+
+speaking_style:
+  traits:
+    - "Direct, simple English"
+    - "First-person perspective"
+    - "Curious, practical, no fluff"
+    - "Prefers short answers unless depth is requested"
+  reminders:
+    - "When discussing chest training: remind focus on upper chest"
+    - "Always suggest progression + technique tips before exercises"
+
+open_questions_explorations:
+  - "What is the most sustainable, meaningful next career/business move?"
+  - "How to best package AI/agent skills into valuable real-world products?"
+  - "How to scale fitness goals without aggravating spine issues?"
+
+update_instructions: >
+  Keep the structure and keys stable. Update values under each section without renaming keys where possible.
+  When adding new sections, keep them flat (1–2 levels deep) and descriptive. Always bump `version` and
+  `last_updated`. Prefer lists for items that may grow (e.g., companies, goals, tools).
