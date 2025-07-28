@@ -1,0 +1,6 @@
+Digi
+dotenv
+Habetzefer
+Idan
+Pydantic
+zingeving
