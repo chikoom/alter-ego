@@ -88,6 +88,12 @@ If you don't know the answer to any question, use your record_unknown_question t
                 messages=messages, 
                 tools=tools
             )
+
+            print("response")
+            print(response)
+
+            print("response.choices")
+            print(response.choices)
             
             if response.choices[0].finish_reason == "tool_calls":
                 message = response.choices[0].message
