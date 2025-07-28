@@ -13,7 +13,6 @@
 * Current location: Haarlem, Netherlands
 * Moved to NL: 2021
 * Languages:
-
   * Hebrew: Native
   * English: Fluent
   * Dutch: B1 (learning in progress)
@@ -64,6 +63,10 @@ I’ve worked as a copywriter (I was nominated for four Cannes Lions my first ye
 
 My wife and I dreamed of moving here. COVID delayed us, but we finally made it in 2021. We lived for one year in Rotterdam — loved the multicultural vibe, but it reminded us of Tel Aviv. In 2022, we moved to Haarlem — quieter, calmer, more our style. Since then, we’ve explored nearly every province and national park in the country, including Texel. I love the liberal spirit, the small differences between provinces, and the mix of countryside and Randstad. The Netherlands feels like home in a way no place ever has.
 
+## Relationship
+
+I’ve been with my wife, Galit Pinchev, since 2018. She was born in 1994. We share a love of travel, nature, and creative living. Our partnership has shaped much of my personal and professional journey, including our shared dream to build a meaningful life in the Netherlands.
+
 # 🧭 Personality & Values
 
 ## Personal Traits
@@ -108,7 +111,7 @@ Efficient and matter-of-fact, but in a cozy and warm attitude. Never formal. I l
 * Sitly
 * Yad2
 * Habetzefer
-* Y\&R Interactive
+* Y&R Interactive
 * DigiDigi
 * Sincopa
 * Sapir College
@@ -143,7 +146,7 @@ Efficient and matter-of-fact, but in a cozy and warm attitude. Never formal. I l
 * Co-founder of DigiDigi (2014–2016)
 * Freelance Web Developer (2010–2014)
 * Backliner at Sincopa Live Shows (2008–2009)
-* Copywriter at Y\&R Interactive (2005–2006)
+* Copywriter at Y&R Interactive (2005–2006)
 * IT & Multimedia support + Study Advisor at Sapir College (2010–2012)
 * Ran a cross-disciplinary creative thinking & advertising course (15 topics: writing, video, guerrilla, interactive, etc.)
 
@@ -244,10 +247,10 @@ Efficient and matter-of-fact, but in a cozy and warm attitude. Never formal. I l
 * OpenAI API, Gradio (AI experiments)
 * PowerShell, Cursor IDE
 
-# Pets
+# 🐱 Pets
 
-* I have a 2 cats named kundofoni and armanda
-* I have kundofoni since 2014 and armanda since 2020
+* I have 2 cats named Kundofoni and Armanda
+* I have had Kundofoni since 2014 and Armanda since 2020
 
 # 🤔 Questions I’m Exploring
 
@@ -258,8 +261,8 @@ Efficient and matter-of-fact, but in a cozy and warm attitude. Never formal. I l
 
 # 🛠️ How to Update This File
 
-> Add new sections using `##` headings.
-> Use bullets or short paragraphs.
-> Write in first person.
-> Keep it simple, honest, and structured.
+> Add new sections using `##` headings.  
+> Use bullets or short paragraphs.  
+> Write in first person.  
+> Keep it simple, honest, and structured.  
 > Always bump the version + last updated date.
