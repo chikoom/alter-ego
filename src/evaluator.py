@@ -96,16 +96,22 @@ Respond with either "ACCEPTABLE" or "UNACCEPTABLE" followed by your reasoning.""
     
     def evaluate(self, reply, message, history) -> Evaluation:
         """Evaluate a response using Gemini API"""
+        print(f"Evaluator called with reply: {reply}")
+        print(f"Evaluator called with message: {message}")
+        
         # Check if Gemini client is available
         if self.gemini is None:
+            print("ERROR: Gemini client not available - missing API key")
             # Return a default evaluation that rejects pig latin
             response_lower = reply.lower()
             if any(word in response_lower for word in ['way', 'ay', 'ayway']):
+                print("Detected pig latin - rejecting")
                 return Evaluation(
                     is_acceptable=False,
                     feedback="Response rejected: Pig latin detected"
                 )
             else:
+                print("No pig latin detected - accepting")
                 return Evaluation(
                     is_acceptable=True,
                     feedback="Response accepted: No pig latin detected"
@@ -119,11 +125,14 @@ Agent Response: {reply}
 
 Please respond with either "ACCEPTABLE" or "UNACCEPTABLE" followed by your reasoning."""
         
+        print(f"User prompt: {user_prompt}")
+        
         messages = [
             {"role": "system", "content": self.evaluator_system_prompt()},
             {"role": "user", "content": user_prompt}
         ]
         
+        print(f"About to call Gemini API...")
         response = self.gemini.chat.completions.create(
             model="gemini-2.0-flash", 
             messages=messages
@@ -143,6 +152,10 @@ Please respond with either "ACCEPTABLE" or "UNACCEPTABLE" followed by your reaso
         else:
             # Default to False for unclear responses
             is_acceptable = False
+        
+        # Debug: Print the evaluator response for debugging
+        print(f"Evaluator response: {response_text}")
+        print(f"Is acceptable: {is_acceptable}")
         
         return Evaluation(
             is_acceptable=is_acceptable,

@@ -94,7 +94,10 @@ If you don't know the answer to any question, use your record_unknown_question t
                 if msg[1] is not None:
                     formatted_history.append({"role": "assistant", "content": str(msg[1])})
         
-        messages = [{"role": "system", "content": updated_system_prompt}] + formatted_history + [{"role": "user", "content": message}]
+        # Ensure message is a string
+        message_str = str(message) if not isinstance(message, str) else message
+        
+        messages = [{"role": "system", "content": updated_system_prompt}] + formatted_history + [{"role": "user", "content": message_str}]
         response = openai.chat.completions.create(model="gpt-4o-mini", messages=messages)
         return response.choices[0].message.content
 
@@ -148,13 +151,20 @@ If you don't know the answer to any question, use your record_unknown_question t
 
         # Evaluate the response
         try:
-            evaluation = self.evaluator.evaluate(reply, message, history)
+            print(f"Evaluating response: {reply}")
+            # Extract the actual message content if it's an object
+            message_content = message.content if hasattr(message, 'content') else str(message)
+            evaluation = self.evaluator.evaluate(reply, message_content, history)
             
             if evaluation.is_acceptable:
+                print("Passed evaluation - returning reply")
                 return reply
             else:
+                print("Failed evaluation - retrying")
+                print(f"Feedback: {evaluation.feedback}")
                 # Use rerun to generate a better response
-                return self.rerun(reply, message, history, evaluation.feedback)
+                return self.rerun(reply, message_content, history, evaluation.feedback)
         except Exception as e:
-            # Return original reply if evaluation fails
+            print(f"Evaluation failed: {e}")
+            print("Returning original reply without evaluation")
             return reply 
