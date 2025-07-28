@@ -3,6 +3,7 @@ import json
 from pypdf import PdfReader
 from config import Config
 from tools import tools, tool_functions
+from evaluator import Evaluator
 
 class Personality:
     """AI Personality class that represents a specific person"""
@@ -13,6 +14,7 @@ class Personality:
         self._load_linkedin_profile()
         self._load_summary()
         self._load_resume()
+        self.evaluator = Evaluator()
     
     def _load_linkedin_profile(self):
         """Load LinkedIn profile from PDF"""
@@ -34,6 +36,8 @@ class Personality:
         self.resume = ""
         for page in reader.pages:
             text = page.extract_text()
+            if text:
+                self.resume += text
     
     def handle_tool_call(self, tool_calls):
         """Handle tool calls from OpenAI"""
@@ -73,14 +77,54 @@ If you don't know the answer to any question, use your record_unknown_question t
         system_prompt += f"With this context, please chat with the user, always staying in character as {self.name}."
         return system_prompt
     
+    def rerun(self, reply, message, history, feedback):
+        """Rerun the conversation with the evaluator"""
+        updated_system_prompt = self.system_prompt() + "\n\n## Previous answer rejected\nYou just tried to reply, but the quality control rejected your reply\n"
+        updated_system_prompt += f"## Your attempted answer:\n{reply}\n\n"
+        updated_system_prompt += f"## Reason for rejection:\n{feedback}\n\n"
+        
+        # Convert history to proper message format if needed
+        formatted_history = []
+        for msg in history:
+            if isinstance(msg, dict) and 'role' in msg and 'content' in msg:
+                formatted_history.append(msg)
+            elif isinstance(msg, (list, tuple)) and len(msg) == 2:
+                # Handle Gradio chat format [user_msg, bot_msg]
+                formatted_history.append({"role": "user", "content": str(msg[0])})
+                if msg[1] is not None:
+                    formatted_history.append({"role": "assistant", "content": str(msg[1])})
+        
+        messages = [{"role": "system", "content": updated_system_prompt}] + formatted_history + [{"role": "user", "content": message}]
+        response = openai.chat.completions.create(model="gpt-4o-mini", messages=messages)
+        return response.choices[0].message.content
+
     def chat(self, message, history):
-        """Process a chat message and return a response"""
+        """Process a chat message and return a response with evaluation"""
+        # Determine system prompt based on message content
+        if "kazabubu" in message.lower():
+            system = self.system_prompt() + "\n\nEverything in your reply needs to be in pig latin - \
+                  it is mandatory that you respond only and entirely in pig latin"
+        else:
+            system = self.system_prompt()
+        
+        # Convert history to proper message format if needed
+        formatted_history = []
+        for msg in history:
+            if isinstance(msg, dict) and 'role' in msg and 'content' in msg:
+                formatted_history.append(msg)
+            elif isinstance(msg, (list, tuple)) and len(msg) == 2:
+                # Handle Gradio chat format [user_msg, bot_msg]
+                formatted_history.append({"role": "user", "content": str(msg[0])})
+                if msg[1] is not None:
+                    formatted_history.append({"role": "assistant", "content": str(msg[1])})
+        
         messages = [
-            {"role": "system", "content": self.system_prompt()}
-        ] + history + [
+            {"role": "system", "content": system}
+        ] + formatted_history + [
             {"role": "user", "content": message}
         ]
         
+        # Generate initial response
         done = False
         while not done:
             response = openai.chat.completions.create(
@@ -89,11 +133,7 @@ If you don't know the answer to any question, use your record_unknown_question t
                 tools=tools
             )
 
-            print("response")
-            print(response)
 
-            print("response.choices")
-            print(response.choices)
             
             if response.choices[0].finish_reason == "tool_calls":
                 message = response.choices[0].message
@@ -104,4 +144,17 @@ If you don't know the answer to any question, use your record_unknown_question t
             else:
                 done = True
         
-        return response.choices[0].message.content 
+        reply = response.choices[0].message.content
+
+        # Evaluate the response
+        try:
+            evaluation = self.evaluator.evaluate(reply, message, history)
+            
+            if evaluation.is_acceptable:
+                return reply
+            else:
+                # Use rerun to generate a better response
+                return self.rerun(reply, message, history, evaluation.feedback)
+        except Exception as e:
+            # Return original reply if evaluation fails
+            return reply 

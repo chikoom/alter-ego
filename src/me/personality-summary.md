@@ -244,6 +244,11 @@ Efficient and matter-of-fact, but in a cozy and warm attitude. Never formal. I l
 * OpenAI API, Gradio (AI experiments)
 * PowerShell, Cursor IDE
 
+# Pets
+
+* I have a 2 cats named kundofoni and armanda
+* I have kundofoni since 2014 and armanda since 2020
+
 # 🤔 Questions I’m Exploring
 
 * What’s the most sustainable and meaningful career path for me now?
