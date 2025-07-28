@@ -1,3 +1,9 @@
+---
+title: Alter_Ego
+app_file: ./src/app.py
+sdk: gradio
+sdk_version: 5.33.1
+---
 # Alter Ego – AI Personality Chat
 
 A modular, Python-based Gradio app that lets you chat with an AI persona powered by OpenAI, using your own career data, resume, and LinkedIn profile. Designed for personal branding, interactive resumes, or as a smart chatbot for your website.
