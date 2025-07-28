@@ -1,17 +1,70 @@
 <!-- public/index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Alter Ego Chatbot</title>
     <meta charset="UTF-8" />
-  </head>
-  <body>
-    <h1>Talk to Alter Ego</h1>
+    <title>IdanBaron Sandbox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
       type="module"
       src="https://gradio.s3-us-west-2.amazonaws.com/5.33.1/gradio.js"
     ></script>
+    <style>
+      body {
+        margin: 0;
+        background-color: #111;
+        color: #fff;
+        font-family: system-ui, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        padding: 2rem;
+      }
+
+      .profile-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #444;
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+        margin: 0 0 2rem;
+        color: #ccc;
+      }
+
+      gradio-app {
+        width: 100%;
+        max-width: 600px;
+        height: 700px;
+        border: 2px solid #333;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: #222;
+      }
+
+      footer {
+        margin-top: auto;
+        padding: 1rem 0;
+        color: #555;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="idan.jpg"
+      alt="Idan Baron"
+      class="profile-image"
+    />
+    <h1>Idan Baron's Personal Agent</h1>
 
     <gradio-app src="https://idanbaronpro-alter-ego.hf.space"></gradio-app>
+
+    <footer>© 2025 Idan Baron</footer>
   </body>
 </html>
