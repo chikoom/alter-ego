@@ -30,14 +30,14 @@ class Config:
     @staticmethod
     def get_linkedin_profile_path():
         """Get path to LinkedIn profile PDF"""
-        return "me/linkedin-profile.pdf"
+        return "./src/me/linkedin-profile.pdf"
     
     @staticmethod
     def get_summary_path():
         """Get path to summary file"""
-        return "me/personality-summary.md" 
+        return "./src/me/personality-summary.md" 
 
     @staticmethod
     def get_resume_path():
         """Get path to resume file"""
-        return "me/idanbaron-resume-last-years.pdf" 
+        return "./src/me/idanbaron-resume-last-years.pdf" 
