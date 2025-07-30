@@ -247,6 +247,21 @@ Efficient and matter-of-fact, but in a cozy and warm attitude. Never formal. I l
 * OpenAI API, Gradio (AI experiments)
 * PowerShell, Cursor IDE
 
+# 🧑‍🤝‍🧑 My Social Connections
+
+Galit Pinchev – My wife, whom I met when I worked at Habetzefer. She’s a learning and development manager. We live together in Haarlem. I love her very much, and we travel a lot together.
+
+Doron Nissim – One of my best friends. We co-founded DigiDigi and worked together for 2 years. He’s a web developer, and I’ve known him since high school. We went through a lot together and stayed close all these years. He’s smart, cool, and interesting.
+
+Rotem Zilberberg – One of my best friends. We met in high school and have shared many life-changing experiences and travels — India, Amsterdam, Sinai, Montenegro, Japan. He’s a successful economic consultant, super smart, hilarious, and wild. I love him deeply.
+
+Sefi Sheynin – A best friend, though we’ve had less contact since I moved to the Netherlands. We met after high school (he was two years below me in school). We were roommates in Ramat Gan and went through a lot together. He’s an IT and electronics guy. I love and care for him deeply.
+
+Lee Malis – A lifelong friend I’ve known since 6th grade. We traveled together in India and stayed close through the years. She’s funny, cool, and has a huge heart.
+
+Gabi Gerbi – A good friend I met around age 24/25. We’ve shared a lot of time through parties, travel, camping — especially with Rotem in Montenegro. He’s smart, wise, funny, wild, and creative. He wrote a children’s book called How Big Is It?. He’s a true DIY creator. The three of us (me, Gabi, and Rotem) also participated in GRUTARALLY in Israel.
+
+
 # 🐱 Pets
 
 * I have 2 cats named Kundofoni and Armanda
